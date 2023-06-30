@@ -1,0 +1,159 @@
+@font-face{
+  font-family: "andor";
+  src: url("img/AndorRegular.otf");
+}
+
+*{
+	box-sizing: border-box;
+	font-family:'andor';
+	margin: 0;
+	padding: 0;
+}
+body{
+  background-color:#393A42;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.origen{
+	max-width: 1100px;
+	margin: auto;
+}
+.origen .fila{
+  display: flex;
+  flex-wrap: wrap; /* Permitimos que las columnas se envuelvan en pantallas pequeñas */
+}
+.col{
+	width: 50%;
+	position: relative;
+}
+.info{
+  width: 100%;
+  position: relative;
+  height: 616px;
+}
+.col span{
+	position: relative;
+	top: 20%;
+	right: 10%;
+	transform: translate(-50%, -50%);
+	font-size: 80px;
+	color: #727376;
+	animation-name: moveSpan;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  background-color: transparent;
+}
+@keyframes moveSpan {
+  0% { right: 30%; opacity: 0; }
+  50% { right: 20%; opacity: 0.5; }
+  100% { right: 10%; opacity: 1; }
+}
+.col a{
+  position: relative;
+	top: 20%;
+	left: 60%;
+	font-size: 40px;
+	text-decoration: none;
+	color: #727376;
+	transition: 0.5s;
+	animation-name: movea;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  background-color: transparent;
+}
+@keyframes movea{
+	0% { left: 100%; opacity: 0; }
+  50% { left: 75%; opacity: 0.5; }
+  100% { left: 60%; opacity: 1; }
+}
+.col a:hover{
+	color:#F9CA2B;
+	font-size: 45px;
+}
+.col img{
+	width: 65%;
+	margin-top: 25px;
+	margin-left: 25px;
+	animation-name: enlargeAnimation;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  background-color: transparent;
+}
+@keyframes enlargeAnimation {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.col .info h1{
+  position: relative;
+  top: 20%;
+  right: 10%;
+  font-size: 110px;
+  animation-name: moveTitle;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  color:#F9CA2B;
+  margin: auto;
+  z-index: 99;
+  background-color: transparent;
+}
+@keyframes moveTitle {
+  0% { top: 60%; opacity: 0; }
+  50% { top: 40%; opacity: 0.5; }
+  100% { top: 20%; opacity: 1; }
+}
+/*SECTION RESPONSIVE*/
+@media screen and (max-width:700px){
+	 
+  .col {
+    width: 100%;
+  }
+  .info{
+    height: auto;
+  }
+  .col .info{
+    padding-top: 30px;
+  }
+  .col .info span {
+    position: relative;
+    transform: none;
+    font-size: 55px;
+    left: 15%;
+  }
+  
+  .col .info a {
+    position: relative;
+    font-size: 40px;
+    margin-bottom: 20px;
+    right: 70%;
+  }
+  
+  .col img {
+    max-width: 100%;
+  }
+  @keyframes enlargeAnimation {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  
+ .col .info h1 {
+    display: block;
+    width: 100%;
+    position: static;
+    font-size: 60px;
+    text-align: center;
+    margin: auto;
+  }
+}
